@@ -1,14 +1,10 @@
-// ✅ Collapsible menus
+// ✅ Collapsible Menus
 document.querySelectorAll(".menu").forEach(item => {
   item.addEventListener("click", () => {
-    // Close other menus before opening new one
+    // close others
     document.querySelectorAll(".menu").forEach(menu => {
-      if (menu !== item) {
-        menu.classList.remove("active");
-      }
+      if (menu !== item) menu.classList.remove("active");
     });
-
-    // Toggle the clicked menu
     item.classList.toggle("active");
   });
 });
@@ -17,17 +13,14 @@ document.querySelectorAll(".menu").forEach(item => {
 const body = document.body;
 const toggleBtn = document.getElementById("theme-toggle");
 
-// Set initial button text
+// Set initial text
 toggleBtn.textContent = body.classList.contains("light") 
   ? "🌑 Dark Mode" 
   : "🌙 Light Mode";
 
-// Toggle light/dark on click
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("light");
-
-  // Update button text
-  toggleBtn.textContent = body.classList.contains("light") 
-    ? "🌑 Dark Mode" 
+  toggleBtn.textContent = body.classList.contains("light")
+    ? "🌑 Dark Mode"
     : "🌙 Light Mode";
 });
