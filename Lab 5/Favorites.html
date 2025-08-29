@@ -1,27 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favorites - Julian Miguel D. De Jesus</title>
-</head>
-<body style="font-family: Arial, sans-serif; margin: 40px; color: #787878;">
-    
-    <h1 style="color: #046dd6;">🎬 My Favorite Movies</h1>
-    <p>Here are some of my all-time favorite movies. I enjoy films that are full of style, action, comedy, and great storytelling.</p>
-    
-    <ul>
-        <li><b>Scott Pilgrim vs. the World</b> — Action, comedy, music, and video-game vibes all in one.</li>
-        <li><b>Django Unchained</b> — A bold western with action, revenge, and powerful storytelling.</li>
-        <li><b>Kill Bill Vol. 1 & 2</b> — Quentin Tarantino’s martial arts revenge epic (similar style to Django).</li>
-        <li><b>Deadpool</b> — Action + comedy with a self-aware, comic-inspired vibe (similar to Scott Pilgrim).</li>
-        <li><b>Baby Driver</b> — Stylish action film with music at its core (great mix of beats + visuals).</li>
-        <li><b>The Hateful Eight</b> — Another Tarantino western with sharp dialogue and tension.</li>
-        <li><b>Kick-Ass</b> — A fun, comic-style action-comedy with an edgy twist (same vibe as Scott Pilgrim).</li>
-    </ul>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favorites - Julian Miguel D. De Jesus</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      background: #fafafa;
+      color: #000; /* default text black for light mode */
+      transition: background 0.3s, color 0.3s;
+    }
 
-    <hr>
-    <p>These movies inspire me with their energy, creativity, and unique storytelling styles.</p>
+    h1 {
+      color: #046dd6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    hr {
+      margin: 25px 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    /* 🌙 Dark Mode Styles */
+    body.dark-mode {
+      background: #1e1e1e;
+      color: #f5f5f5;
+    }
+    body.dark-mode h1 {
+      color: #4da6ff;
+    }
+    body.dark-mode hr {
+      border-top: 1px solid #555;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>🎬 My Favorite Movies</h1>
+  <p>Here are some of my all-time favorite movies. I enjoy films that are full of style, action, comedy, and great storytelling.</p>
+  
+  <ul>
+    <li><b>Scott Pilgrim vs. the World</b> — Action, comedy, music, and video-game vibes all in one.</li>
+    <li><b>Django Unchained</b> — A bold western with action, revenge, and powerful storytelling.</li>
+    <li><b>Kill Bill Vol. 1 & 2</b> — Quentin Tarantino’s martial arts revenge epic (similar style to Django).</li>
+    <li><b>Deadpool</b> — Action + comedy with a self-aware, comic-inspired vibe (similar to Scott Pilgrim).</li>
+    <li><b>Baby Driver</b> — Stylish action film with music at its core (great mix of beats + visuals).</li>
+    <li><b>The Hateful Eight</b> — Another Tarantino western with sharp dialogue and tension.</li>
+    <li><b>Kick-Ass</b> — A fun, comic-style action-comedy with an edgy twist (same vibe as Scott Pilgrim).</li>
+  </ul>
+
+  <hr>
+  <p>These movies inspire me with their energy, creativity, and unique storytelling styles.</p>
+
+  <!-- 🖱️ Switch Button -->
+  <button onclick="toggleMode()" style="margin-top:20px; padding:8px 15px; border:none; border-radius:6px; background:#046dd6; color:#fff; cursor:pointer;">
+    Toggle Light/Dark Mode
+  </button>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
 
 </body>
 </html>

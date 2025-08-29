@@ -1,33 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flavor Haven Restaurant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flavor Haven Restaurant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f9f9f9;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #f0f0f0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h2 {
+      color: #b22222;
+    }
+
+    .inner-box {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #e0e0e0;
+    }
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    /* 🌙 Dark Mode */
+    body.dark-mode {
+      background: #1e1e1e;
+      color: #f5f5f5;
+    }
+    body.dark-mode .container {
+      background-color: #7c7c7c;
+      border: 1px solid #555;
+    }
+    body.dark-mode .inner-box {
+      background-color: #444;
+      border: 1px solid #666;
+      color: #f0f0f0;
+    }
+    body.dark-mode h2 {
+      color: #ff6666;
+    }
+    body.dark-mode h3 {
+      color: #fff;
+    }
+    body.dark-mode p {
+      color: #e0e0e0;
+    }
+
+    /* Toggle Button */
+    .toggle-btn {
+      margin-top: 20px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      background: #046dd6;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .toggle-btn:hover {
+      background: #024c9c;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 40px; color: #333;">
+<body>
 
-    <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 12px; background-color: #7c7c7c;">
-        
-        <h2 style="color: #b22222;">Flavor Haven Restaurant</h2>
-        <p style="color: #fff;">Cozy dining place — delicious meals, warm ambiance, and great service.</p>
-        <p style="color: #f0f0f0;"><i>Open daily · Signature dishes · Fresh ingredients</i></p>
+  <div class="container">
+    <h2>Flavor Haven Restaurant</h2>
+    <p>Cozy dining place — delicious meals, warm ambiance, and great service.</p>
+    <p><i>Open daily · Signature dishes · Fresh ingredients</i></p>
 
-        <!-- Inner padded box (lighter grey) -->
-        <div style="margin: 20px 0; padding: 15px; border: 1px solid #eee; border-radius: 8px; background-color: #d3d3d3; color: #333;">
-            <p>Welcome — taste the best of Filipino and international cuisine. We focus on freshly cooked meals, seasonal specials, and a place where family and friends can come together. No rush, just good food and great vibes.</p>
-        </div>
-
-        <h3 style="color: #fff;">Hours</h3>
-        <p style="color: #f5f5f5;">
-            Mon–Fri : 10:00 AM – 9:00 PM <br>
-            Sat–Sun : 11:00 AM – 11:00 PM
-        </p>
-
-        <p style="color: #fff;"><b>Location:</b> 123 City Center Avenue, Downtown</p>
-
-        <p style="margin-top: 20px; color: #e0e0e0;">© 2025 Flavor Haven Restaurant · Crafted with care</p>
+    <div class="inner-box">
+      <p>Welcome — taste the best of Filipino and international cuisine. We focus on freshly cooked meals, seasonal specials, and a place where family and friends can come together. No rush, just good food and great vibes.</p>
     </div>
+
+    <h3>Hours</h3>
+    <p>
+      Mon–Fri : 10:00 AM – 9:00 PM <br>
+      Sat–Sun : 11:00 AM – 11:00 PM
+    </p>
+
+    <p><b>Location:</b> 123 City Center Avenue, Downtown</p>
+
+    <p style="margin-top: 20px;">© 2025 Flavor Haven Restaurant · Crafted with care</p>
+  </div>
+
+  <!-- 🖱️ Toggle Button -->
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Light/Dark Mode</button>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
 
 </body>
 </html>

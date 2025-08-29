@@ -87,7 +87,7 @@ body.light .sidebar {
 
 .sidebar .menu {
   cursor: pointer;
-  padding: 10px;
+  padding: 10px 20px 10px 25px; /* extra left space for arrow */
   margin-bottom: 10px;
   background: #333;
   border-radius: 8px;
@@ -105,7 +105,7 @@ body.light .sidebar .menu {
 .sidebar .menu::before {
   content: "▶";
   position: absolute;
-  left: -18px;
+  left: 8px;
   transition: transform 0.3s;
 }
 .sidebar .menu.active::before {
@@ -117,7 +117,7 @@ body.light .sidebar .menu {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.3s ease;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .sidebar .menu.active ul {
   max-height: 500px;
@@ -125,9 +125,12 @@ body.light .sidebar .menu {
   margin-bottom: 15px;
 }
 .sidebar .menu ul li {
-  padding: 5px 0;
+  padding: 6px 0;
 }
 .sidebar .menu ul li a {
+  display: block;
+  padding: 4px 10px;
+  border-radius: 6px;
   color: #ddd;
   text-decoration: none;
   transition: 0.3s;
@@ -136,6 +139,7 @@ body.light .sidebar .menu ul li a {
   color: #222;
 }
 .sidebar .menu ul li a:hover {
+  background: rgba(0, 240, 255, 0.2);
   color: #fff;
   text-shadow: 0 0 5px #00f0ff;
 }
