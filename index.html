@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Profile</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="light">
-
   <header>
     <h2>Julian Miguel D. De Jesus</h2>
     <p>BSIE - ICT 3A</p>
@@ -19,55 +16,51 @@
     </p>
     <button id="theme-toggle">🌑 Dark Mode</button>
   </header>
-
   <div class="container">
     <div class="sidebar">
-  <h3>Activities</h3>
-  <ul>
-    <li class="menu"> Lab 1: Intro
+      <h3>Activities</h3>
       <ul>
-        <li><a href="Lab 1/Activity 1.html" target="activity-frame">Activity 1</a></li>
+        <li class="menu"> Lab 1: Intro
+          <ul>
+            <li><a href="Lab 1/Activity 1.html" target="activity-frame">Activity 1</a></li>
+          </ul>
+        </li>
+        <li class="menu"> Lab 2: Git
+          <ul>
+            <li><a href="Lab 2/Activity 2.1.html" target="activity-frame">Activity 2.1</a></li>
+          </ul>
+        </li>
+        <li class="menu"> Lab 3: Workflow
+          <ul>
+            <li><a href="Lab 3/Activity 1.html" target="activity-frame">Activity 1</a></li>
+          </ul>
+        </li>
+        <li class="menu"> Lab 4: HTML5 (Part 1)
+          <ul>
+            <li><a href="Lab 4/About me.html" target="activity-frame">About Me</a></li>
+            <li><a href="Lab 4/Favorites.html" target="activity-frame">Favorites</a></li>
+            <li><a href="Lab 4/First Page.html" target="activity-frame">First Page</a></li>
+            <li><a href="Lab 4/VisualtoCode.html" target="activity-frame">Visual to Code</a></li>
+          </ul>
+        </li>
+        <li class="menu"> Lab 5: HTML5 (Part 2)
+          <ul>
+            <li><a href="Lab 5/About me.html" target="activity-frame">About Me</a></li>
+            <li><a href="Lab 5/Favorites.html" target="activity-frame">Favorites</a></li>
+            <li><a href="Lab 5/VisualtoCode.html" target="activity-frame">Visual to Code</a></li>
+          </ul>
+        </li>
+        <li class="menu"> Mini Project
+          <ul>
+            <li><a href="Mini Project/index.html" target="activity-frame">Home Page</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-    <li class="menu"> Lab 2: Git
-      <ul>
-        <li><a href="Lab 2/Activity 2.1.html" target="activity-frame">Activity 2.1</a></li>
-      </ul>
-    </li>
-    <li class="menu"> Lab 3: Workflow
-      <ul>
-        <li><a href="Lab 3/Activity 1.html" target="activity-frame">Activity 1</a></li>
-      </ul>
-    </li>
-    <li class="menu"> Lab 4: HTML5 (Part 1)
-      <ul>
-        <li><a href="Lab 4/About me.html" target="activity-frame">About Me</a></li>
-        <li><a href="Lab 4/Favorites.html" target="activity-frame">Favorites</a></li>
-        <li><a href="Lab 4/First Page.html" target="activity-frame">First Page</a></li>
-        <li><a href="Lab 4/VisualtoCode.html" target="activity-frame">Visual to Code</a></li>
-      </ul>
-    </li>
-    <li class="menu"> Lab 5: HTML5 (Part 2)
-      <ul>
-        <li><a href="Lab 5/About me.html" target="activity-frame">About Me</a></li>
-        <li><a href="Lab 5/Favorites.html" target="activity-frame">Favorites</a></li>
-        <li><a href="Lab 5/VisualtoCode.html" target="activity-frame">Visual to Code</a></li>
-      </ul>
-    </li>
-    <li class="menu"> Mini Project
-      <ul>
-        <li><a href="Mini Project/index.html" target="activity-frame">Home Page</a></li>
-      </ul>
-    </li>
-  </ul>
-</div>
-
-
+    </div>
     <div class="content">
-      <iframe name="activity-frame"></iframe>
+      <iframe name="activity-frame" src="Lab 4/About me.html" style="width:100%;height:600px;border:none;"></iframe>
     </div>
   </div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

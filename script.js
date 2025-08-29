@@ -57,10 +57,12 @@ if (themeToggle) {
       document.body.classList.remove("light");
       document.body.classList.add("dark");
       themeToggle.textContent = "🌞 Light Mode";
+      window.postMessage({ theme: "dark" }, "*");
     } else {
       document.body.classList.remove("dark");
       document.body.classList.add("light");
       themeToggle.textContent = "🌑 Dark Mode";
+      window.postMessage({ theme: "light" }, "*");
     }
   });
 }
