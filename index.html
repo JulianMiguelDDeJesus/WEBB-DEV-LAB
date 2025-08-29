@@ -6,15 +6,168 @@
   <title>Student Profile - HighTech</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fafafa;
+      color: #000;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      padding: 15px;
+      text-align: center;
+      background: #046dd6;
+      color: white;
+    }
+
+    header h2 {
+      margin: 5px 0;
+    }
+
+    header p {
+      margin: 3px 0;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 6px;
+    }
+
+    #theme-toggle {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      background: white;
+      color: #046dd6;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 120px);
+    }
+
+    .sidebar {
+      width: 260px;
+      background: #f4f4f4;
+      padding: 15px;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 10px;
+      color: #046dd6;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu {
+      cursor: pointer;
+      padding: 8px;
+      margin: 5px 0;
+      background: #eaeaea;
+      border-radius: 6px;
+      transition: background 0.3s;
+      position: relative;
+    }
+
+    .menu:hover {
+      background: #dcdcdc;
+    }
+
+    .menu::after {
+      content: "▶";
+      position: absolute;
+      right: 10px;
+      transition: transform 0.3s;
+    }
+
+    .menu.active::after {
+      transform: rotate(90deg);
+    }
+
+    .menu ul {
+      display: none;
+      padding-left: 15px;
+      margin-top: 5px;
+    }
+
+    .menu.active ul {
+      display: block;
+    }
+
+    .menu ul li {
+      margin: 5px 0;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: #046dd6;
+    }
+
+    .menu ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      flex: 1;
+      padding: 15px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* 🌙 Dark Mode */
+    body.light {
+      background: #fafafa;
+      color: #000;
+    }
+
+    body.dark {
+      background: #1e1e1e;
+      color: #f5f5f5;
+    }
+
+    body.dark .sidebar {
+      background: #2c2c2c;
+      border-right: 1px solid #444;
+    }
+
+    body.dark .menu {
+      background: #333;
+    }
+
+    body.dark .menu:hover {
+      background: #444;
+    }
+
+    body.dark .menu ul li a {
+      color: #4da6ff;
+    }
+  </style>
 </head>
-<body>
+<body class="light">
 
   <header>
     <h2>Julian Miguel D. De Jesus</h2>
     <p>BSIE - ICT 3A</p>
     <p>
       <a class="custom-link fa-brands fa-github" 
-         href="https://github.com/JulianMiguelDDeJesus/WEBB-DEV-LAB"> Github Repository</a>
+         href="https://github.com/JulianMiguelDDeJesus/WEBB-DEV-LAB" target="_blank">
+         Github Repository</a>
     </p>
     <button id="theme-toggle">☀️ Light Mode</button>
   </header>

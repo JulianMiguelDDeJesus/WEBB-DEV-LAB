@@ -49,6 +49,21 @@
     body.dark-mode hr {
       border-top: 1px solid #555;
     }
+
+    /* Toggle Button */
+    .toggle-btn {
+      margin-top: 20px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      background: #046dd6;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .toggle-btn:hover {
+      background: #024c9c;
+    }
   </style>
 </head>
 <body>
@@ -69,16 +84,8 @@
   <hr>
   <p>These movies inspire me with their energy, creativity, and unique storytelling styles.</p>
 
-  <!-- 🖱️ Switch Button -->
-  <button onclick="toggleMode()" style="margin-top:20px; padding:8px 15px; border:none; border-radius:6px; background:#046dd6; color:#fff; cursor:pointer;">
-    Toggle Light/Dark Mode
-  </button>
-
-  <script>
-    function toggleMode() {
-      document.body.classList.toggle("dark-mode");
-    }
-  </script>
-
+  <!-- 🖱️ Toggle Button -->
+  <button id="theme-toggle" class="toggle-btn">🌑 Dark Mode</button>
+  <script src="script.js"></script>
 </body>
 </html>
