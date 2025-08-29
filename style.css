@@ -1,150 +1,175 @@
-/* General Reset */
+/* style.css — revised and synced with script.js */
+
+/* -------------------------
+   Color variables (themes)
+   ------------------------- */
+:root{
+  --bg: #121212;
+  --text: #f5f5f5;
+  --header-bg: #1f1f1f;
+  --sidebar-bg: #1c1c1c;
+  --menu-bg: #333;
+  --menu-hover: #444;
+  --container-bg: #1f1f1f;
+  --container-border: #555;
+  --accent: #046dd6;
+  --link: #00f0ff;
+  --muted: #ddd;
+  --card-bg: #2a2a2a;
+}
+
+/* Light theme overrides */
+body.light {
+  --bg: #f5f5f5;
+  --text: #222;
+  --header-bg: #e4e4e4;
+  --sidebar-bg: #f0f0f0;
+  --menu-bg: #ddd;
+  --menu-hover: #dcdcdc;
+  --container-bg: #f0f0f0;
+  --container-border: #ddd;
+  --card-bg: #e9e9e9;
+  --accent: #046dd6;
+  --link: #046dd6;
+  --muted: #666;
+}
+
+/* -------------------------
+   Reset & base
+   ------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
   font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Body Themes */
-body {
-  background: #121212;
-  color: #f5f5f5;
-  transition: background 0.3s, color 0.3s;
-}
-body.light {
-  background: #f5f5f5;
-  color: #222;
-}
-
-/* Header */
+/* -------------------------
+   Header
+   ------------------------- */
 header {
   text-align: center;
-  padding: 20px;
-  background: #1f1f1f;
-  border-bottom: 2px solid #444;
+  padding: 18px 12px;
+  background: var(--header-bg);
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  color: var(--text);
 }
-body.light header {
-  background: #e4e4e4;
-  border-bottom: 2px solid #ccc;
-}
-
 header h2 {
-  margin-bottom: 5px;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
 }
+header p { margin: 4px 0; font-size: 0.95rem; color: var(--text); }
+header .custom-link { color: var(--link); text-decoration: none; }
+header .custom-link:hover { text-decoration: underline; }
 
-header .custom-link {
-  color: #00f0ff;
-  text-decoration: none;
-}
-header .custom-link:hover {
-  text-shadow: 0 0 10px #00f0ff;
-}
-
-/* Toggle Button */
+/* theme toggle */
 #theme-toggle {
-  margin-top: 10px;
-  padding: 8px 16px;
+  margin-top: 8px;
+  padding: 8px 14px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  background: #333;
-  color: #fff;
-  transition: 0.3s;
+  background: var(--menu-bg);
+  color: var(--text);
+  transition: box-shadow 0.2s ease, background 0.2s ease;
 }
 body.light #theme-toggle {
-  background: #ddd;
-  color: #111;
+  background: white;
+  color: var(--accent);
+  border: 1px solid rgba(0,0,0,0.06);
 }
-#theme-toggle:hover {
-  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
-}
+#theme-toggle:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
 
-/* Layout */
+/* -------------------------
+   Layout
+   ------------------------- */
 .container {
   display: flex;
   height: calc(100vh - 120px);
+  min-height: 480px;
 }
 
 /* Sidebar */
 .sidebar {
   width: 250px;
-  background: #1c1c1c;
-  padding: 20px;
+  background: var(--sidebar-bg);
+  padding: 18px;
   overflow-y: auto;
+  border-right: 1px solid rgba(255,255,255,0.03);
 }
-body.light .sidebar {
-  background: #f0f0f0;
-}
+.sidebar h3 { color: var(--accent); margin-bottom: 12px; font-size: 1rem; }
 
-.sidebar h3 {
-  margin-bottom: 15px;
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
+/* menu */
+.sidebar ul { list-style: none; }
 .sidebar .menu {
   cursor: pointer;
-  padding: 10px 20px 10px 25px; /* extra left space for arrow */
+  padding: 10px 16px 10px 36px; /* reserve left space for arrow */
   margin-bottom: 10px;
-  background: #333;
+  background: var(--menu-bg);
   border-radius: 8px;
   position: relative;
-  transition: background 0.3s;
-}
-body.light .sidebar .menu {
-  background: #ddd;
-}
-.sidebar .menu:hover {
-  background: #444;
+  transition: background 0.2s ease;
 }
 
-/* Arrow for menu */
+/* hover */
+.sidebar .menu:hover { background: var(--menu-hover); }
+
+/* arrow on left */
 .sidebar .menu::before {
   content: "▶";
   position: absolute;
-  left: 8px;
-  transition: transform 0.3s;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  display: inline-block;
+  transition: transform 0.25s ease;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 .sidebar .menu.active::before {
-  content: "▼";
+  transform: translateY(-50%) rotate(90deg);
+  color: var(--accent);
 }
 
-/* Submenu */
+/* submenu (accordion) */
 .sidebar .menu ul {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  margin-left: 10px;
+  transition: max-height 0.35s ease, padding 0.25s ease;
+  margin-left: 6px;
 }
 .sidebar .menu.active ul {
-  max-height: 500px;
+  max-height: 400px; /* large enough for many items */
   padding: 8px 0;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
-.sidebar .menu ul li {
-  padding: 6px 0;
-}
+.sidebar .menu ul li { padding: 6px 0; }
 .sidebar .menu ul li a {
   display: block;
-  padding: 4px 10px;
+  padding: 6px 8px;
   border-radius: 6px;
-  color: #ddd;
+  color: var(--link);
   text-decoration: none;
-  transition: 0.3s;
-}
-body.light .sidebar .menu ul li a {
-  color: #222;
+  transition: background 0.15s;
+  font-size: 0.95rem;
 }
 .sidebar .menu ul li a:hover {
-  background: rgba(0, 240, 255, 0.2);
-  color: #fff;
-  text-shadow: 0 0 5px #00f0ff;
+  background: rgba(0,0,0,0.06);
+  color: var(--link);
 }
 
-/* Content */
+/* -------------------------
+   Content / iframe
+   ------------------------- */
 .content {
   flex: 1;
   background: inherit;
@@ -154,6 +179,29 @@ body.light .sidebar .menu ul li a {
   width: 100%;
   height: 100%;
   border: none;
-  background: inherit;
+  background: transparent;
   color: inherit;
 }
+
+/* -------------------------
+   Small screens
+   ------------------------- */
+@media (max-width: 900px) {
+  .container { flex-direction: column; height: auto; }
+  .sidebar { width: 100%; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .content { padding: 12px; height: calc(100vh - 220px); }
+}
+
+/* -------------------------
+   Accessibility
+   ------------------------- */
+a:focus, button:focus {
+  outline: 3px solid rgba(4,109,214,0.25);
+  outline-offset: 2px;
+}
+
+/* -------------------------
+   Utilities (optional)
+   ------------------------- */
+.hidden { display: none !important; }
+.center { display: flex; align-items: center; justify-content: center; }

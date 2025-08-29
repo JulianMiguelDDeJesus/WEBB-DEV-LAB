@@ -8,46 +8,18 @@
     body {
       font-family: Arial, sans-serif;
       margin: 40px;
-      background: #f9f9f9;
-      color: #333;
       transition: background 0.3s, color 0.3s;
     }
-    h1 {
-      color: #046dd6;
-    }
-    hr {
-      margin: 20px 0;
-    }
+    h1 { color: #046dd6; }
+    hr { margin: 20px 0; }
 
-    /* 🌙 Dark Mode */
-    body.dark-mode {
-      background: #1e1e1e;
-      color: #f5f5f5;
-    }
-    body.dark-mode h1 {
-      color: #4da6ff;
-    }
-    body.dark-mode li {
-      color: #ddd;
-    }
-
-    /* Toggle Button */
-    .toggle-btn {
-      margin-top: 20px;
-      padding: 8px 15px;
-      border: none;
-      border-radius: 6px;
-      background: #046dd6;
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .toggle-btn:hover {
-      background: #024c9c;
-    }
+    body.light { background: #f9f9f9; color: #333; }
+    body.dark { background: #1e1e1e; color: #f5f5f5; }
+    body.dark h1 { color: #4da6ff; }
+    body.dark li { color: #ddd; }
   </style>
 </head>
-<body>
+<body class="light">
   <h1>Julian Miguel D. De Jesus</h1>
   <p>Hello! My name is <b>Julian Miguel D. De Jesus</b>. I am a folk dancer performer, a local rap artist, and a music composer.  
   I also enjoy spending my free time playing video games, listening to music, and going to the gym.</p>
@@ -63,8 +35,14 @@
   <hr>
   <p>Thank you for visiting my page!</p>
 
-  <!-- 🖱️ Toggle Button -->
-  <button id="theme-toggle" class="toggle-btn">🌑 Dark Mode</button>
-  <script src="script.js"></script>
+  <script>
+    // ✅ Listen for theme messages from parent
+    window.addEventListener("message", event => {
+      if (event.data.theme) {
+        document.body.classList.remove("light", "dark");
+        document.body.classList.add(event.data.theme);
+      }
+    });
+  </script>
 </body>
 </html>

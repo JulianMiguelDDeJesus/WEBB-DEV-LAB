@@ -1,13 +1,9 @@
 // ✅ Collapsible Menus
 document.querySelectorAll(".menu").forEach(item => {
   item.addEventListener("click", () => {
-    // Close all other menus
     document.querySelectorAll(".menu").forEach(menu => {
-      if (menu !== item) {
-        menu.classList.remove("active");
-      }
+      if (menu !== item) menu.classList.remove("active");
     });
-    // Toggle current menu
     item.classList.toggle("active");
   });
 });
@@ -21,18 +17,43 @@ document.querySelectorAll(".menu ul li a").forEach(link => {
 const body = document.body;
 const toggleBtn = document.getElementById("theme-toggle");
 
-// Set initial button text
 function updateToggleText() {
   toggleBtn.textContent = body.classList.contains("light")
     ? "🌑 Dark Mode"
     : "☀️ Light Mode";
 }
 
-// Set initial state on page load
+// Initial state
 updateToggleText();
 
-// Toggle event
+// Toggle button event
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("light");
+  body.classList.toggle("dark");
   updateToggleText();
+  localStorage.setItem("theme", body.classList.contains("light") ? "light" : "dark");
+  syncIframeTheme();
+});
+
+// ✅ Sync iframe theme
+function syncIframeTheme() {
+  const iframes = document.querySelectorAll("iframe");
+  iframes.forEach(iframe => {
+    if (iframe.contentWindow) {
+      iframe.contentWindow.postMessage(
+        { theme: body.classList.contains("light") ? "light" : "dark" },
+        "*"
+      );
+    }
+  });
+}
+
+// Apply saved theme on load
+window.addEventListener("load", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.classList.remove("light", "dark");
+    body.classList.add(savedTheme);
+    updateToggleText();
+  }
 });
