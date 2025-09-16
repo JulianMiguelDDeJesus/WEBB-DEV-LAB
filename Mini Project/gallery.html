@@ -4,19 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>K-Pop Fan Club - Gallery</title>
-  <meta name="description" content="Browse our gallery of K-pop moments from BTS, BLACKPINK, EXO, and TWICE.">
+  <meta name="description" content="Browse our gallery of K-pop moments from BTS, BLACKPINK, EXO, TWICE, aespa, and NewJeans.">
   <link rel="stylesheet" href="style.css">
   <style>
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 250px);
       gap: 15px;
     }
     .gallery img {
       width: 100%;
-      border-radius: 10px;
-      cursor: pointer;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       transition: transform 0.3s;
+      cursor: pointer;
     }
     .gallery img:hover {
       transform: scale(1.05);
@@ -26,7 +30,7 @@
 <body>
   <header>
     <h1>Gallery</h1>
-<nav>
+    <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="bts.html">BTS</a>
@@ -40,7 +44,6 @@
       <a href="join.html">Join Us</a>
       <a href="credits.html">Credits</a>
     </nav>
-
   </header>
 
   <main>
@@ -53,34 +56,12 @@
       <img src="3D.jpg" alt="Crowd cheering at a stadium">
     </div>
   </main>
-<style>
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-template-rows: repeat(2, 250px);  /* 2 rows */
-    gap: 15px;
-  }
-
-  .gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* keeps the images cropped neatly */
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    transition: transform 0.3s;
-    cursor: pointer;
-  }
-
-  .gallery img:hover {
-    transform: scale(1.05);
-  }
-</style>
 
   <footer>
     <p>© 2025 K-Pop Fan Club</p>
   </footer>
 
- <button id="back-to-top">↑</button>
- <script src="script.js"></script>
+  <button id="back-to-top">↑</button>
+  <script src="script.js"></script>
 </body>
 </html>
