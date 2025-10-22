@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Column Layout</title>
+  <style>
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'; 
+      margin: 0;
+      padding: 20px;
+      color: aliceblue;
+      background-color: rgb(98, 98, 98);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column; 
+      gap: 20px;
+    }
+
+    .text, .image {
+      flex: 1;
+    }
+
+    .image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Two-Column Layout</h1>
+  <div class="container">
+    <div class="text">
+      <h2>Welcome to Flexbox Layout</h2>
+      <p>
+        This is a sample text section. On smaller screens, the text and image
+        will stack vertically. On wider screens, they will be placed side by side
+        using Flexbox.
+      </p>
+    </div>
+    <div class="image">
+      <img src="images/666.png" alt="Me Image">
+    </div>
+  </div>
+</body>
+</html>

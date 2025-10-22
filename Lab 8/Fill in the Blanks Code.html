@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 3: Media Queries</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      /* Black to white gradient */
+      background: linear-gradient(180deg, #000000, #ffffff);
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      width: 90%;
+      max-width: 700px;
+    }
+
+    h2 {
+      color: #000000;
+      border-bottom: 2px solid 555555;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #f3e5f5;
+      border-left: 5px solid #555555;
+      padding: 15px;
+      overflow-x: auto;
+      font-family: "Courier New", monospace;
+      font-size: 15px;
+      border-radius: 5px;
+    }
+
+    .note {
+      font-style: italic;
+      color: #333;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Activity 3: Media Queries</h1>
+
+  <section>
+    <h2>Completed Code Snippet</h2>
+    <pre>
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+    </pre>
+
+    <p class="note">
+      💡 Explanation:  
+      • <code>max-width</code> is used for small screens (phones).  
+      • <code>min-width</code> applies to larger devices (desktops).  
+      • The layout becomes two-column when screen width ≥ 1024px.
+    </p>
+  </section>
+
+</body>
+</html>

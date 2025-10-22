@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 1 - Mobile First Flexbox</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1e1e1e; /* dark grey background */
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      color: #f0f0f0; /* light text for contrast */
+    }
+
+    h1 {
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .box {
+      background-color: #35588d;
+      color: white;
+      padding: 40px;
+      width: 80%;
+      border-radius: 10px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+      background-color: #cde325;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Activity 1: Mobile-First Flexbox</h1>
+
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+</body>
+</html>
