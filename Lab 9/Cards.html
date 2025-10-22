@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bon Aparteá Café Menu</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #fdf1e7, #f6d5b5);
+      font-family: "Poppins", sans-serif;
+      color: #4a2c2a;
+    }
+
+    h1 {
+      color: #3e2723;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      background-color: #fff8f2;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title {
+      color: #5d4037;
+      font-weight: 600;
+    }
+
+    .btn {
+      border-radius: 25px;
+      font-weight: 500;
+      padding: 10px 20px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Custom café colors */
+    .btn-coffee {
+      background-color: #6f4e37;
+      color: #fff;
+      border: none;
+    }
+    .btn-coffee:hover {
+      background-color: #5a3e2d;
+    }
+
+    .btn-caramel {
+      background-color: #d5a253;
+      color: #fff;
+      border: none;
+    }
+    .btn-caramel:hover {
+      background-color: #b8873f;
+    }
+
+    .btn-matcha {
+      background-color: #9cb380;
+      color: #fff;
+      border: none;
+    }
+    .btn-matcha:hover {
+      background-color: #829968;
+    }
+
+    .card-text {
+      color: #4e342e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="text-center mb-5">☕ Bon Aparteá Café Menu</h1>
+
+    <div class="row justify-content-center">
+      <!-- Espresso -->
+      <div class="col-md-4 mb-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Espresso</h5>
+            <p class="card-text">A bold and rich classic shot of espresso, crafted to energize your day.</p>
+            <a href="#" class="btn btn-coffee">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caramel Latte -->
+      <div class="col-md-4 mb-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Caramel Latte</h5>
+            <p class="card-text">Smooth espresso blended with creamy milk and sweet caramel drizzle.</p>
+            <a href="#" class="btn btn-caramel">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matcha Latte -->
+      <div class="col-md-4 mb-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Matcha Latte</h5>
+            <p class="card-text">A refreshing green tea latte with earthy notes and velvety texture.</p>
+            <a href="#" class="btn btn-matcha">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
