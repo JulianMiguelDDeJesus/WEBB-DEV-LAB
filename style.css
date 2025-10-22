@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 /* ============================
@@ -15,13 +16,14 @@ body {
   background-color: #2b2b2b;
   color: #f0f0f0;
   line-height: 1.6;
+  text-align: left; /* ensures left alignment globally */
 }
 
 /* ============================
    Header
 ============================ */
 header {
-  text-align: center;
+  text-align: center; /* changed from center to left */
   padding: 30px 20px;
   background: linear-gradient(135deg, #444, #222);
   border-bottom: 2px solid #555;
@@ -29,20 +31,35 @@ header {
   margin: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
+
+header h1 {
+  margin-bottom: 15px; /* adds space below your name */
+}
+
+header p {
+  margin-bottom: 10px; /* adds space below each paragraph */
+}
+
+header h2 {
+  margin-bottom: 12px; /* space below h2 */
+}
+
 header h2 {
   font-size: 2em;
-  margin-bottom: 8px;
   color: #fff;
 }
+
 header p {
   font-size: 1.1em;
   color: #ccc;
 }
+
 header a {
   text-decoration: none;
   color: #1da1f2;
   font-weight: bold;
 }
+
 header a:hover {
   color: #0d8ddb;
   text-shadow: 0 0 5px #1da1f2;
@@ -68,6 +85,7 @@ header a:hover {
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
   overflow-y: auto;
 }
+
 .sidebar h3 {
   margin-bottom: 15px;
   font-size: 1.3em;
@@ -75,22 +93,27 @@ header a:hover {
   border-bottom: 1px solid #555;
   padding-bottom: 5px;
 }
+
 .sidebar ul {
   list-style: none;
 }
+
 .sidebar li {
   margin: 10px 0;
   color: #ddd;
 }
+
 .sidebar li i {
   margin-right: 6px;
   color: #1da1f2;
 }
+
 .sidebar a {
   text-decoration: none;
   color: #ddd;
   transition: 0.3s;
 }
+
 .sidebar a:hover {
   color: #fff;
   text-shadow: 0 0 5px #1da1f2;
@@ -107,6 +130,7 @@ header a:hover {
   padding: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
+
 iframe {
   width: 100%;
   height: 75vh;
@@ -122,14 +146,17 @@ iframe {
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #2b2b2b;
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #555;
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #888;
 }
@@ -169,6 +196,7 @@ main a {
   text-decoration: none;
   font-weight: bold;
 }
+
 main a:hover {
   color: #88cfff;
   text-decoration: underline;
@@ -182,6 +210,7 @@ main a:hover {
   to { opacity: 1; transform: translateY(0); }
    
 }
+<<<<<<< HEAD
 /* ============================
    Global Reset
 ============================ */
@@ -393,6 +422,8 @@ main a:hover {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+=======
+>>>>>>> 1faecde49b55dd0c1fb275db158bdae2845838b0
 /* Back to Top button */
 #backToTop {
   display: none; /* Hidden by default */
@@ -414,4 +445,8 @@ main a:hover {
 #backToTop:hover {
   background-color: #ffcc80; /* light orange on hover */
   color: #3e2723;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1faecde49b55dd0c1fb275db158bdae2845838b0
