@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primary Color Background Changer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      /* This variable controls the background color */
+      --current-bg: #f4f4f4; 
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      /* We link the background color to the variable */
+      background-color: var(--current-bg);
+      transition: background-color 0.4s ease;
+      color: #333;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .color-btn {
+      padding: 15px 25px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Primary Colors */
+    #red { background-color: #ff0000; }
+    #blue { background-color: #0000ff; }
+    #yellow { background-color: #ffcc00; color: black; }
+    #reset { background-color: #333; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Background Changer</h2>
+    <div class="button-group">
+      <button class="color-btn" id="red">Red</button>
+      <button class="color-btn" id="blue">Blue</button>
+      <button class="color-btn" id="yellow">Yellow</button>
+      <button class="color-btn" id="reset">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    // Map button IDs to their hex colors
+    const colors = {
+      "red": "#ff4d4d",
+      "blue": "#4d94ff",
+      "yellow": "#fff04d",
+      "reset": "#f4f4f4"
+    };
+
+    // Loop through the object to add click events
+    Object.keys(colors).forEach(id => {
+      document.getElementById(id).addEventListener('click', () => {
+        // This updates the CSS Variable --current-bg
+        document.documentElement.style.setProperty('--current-bg', colors[id]);
+      });
+    });
+  </script>
+</body>
+</html>

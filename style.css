@@ -1,5 +1,5 @@
 /* ============================
-   Global Reset
+    Global Reset
 ============================ */
 * {
   margin: 0;
@@ -8,46 +8,37 @@
 }
 
 /* ============================
-   Body
+    Body
 ============================ */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #2b2b2b;
   color: #f0f0f0;
   line-height: 1.6;
-  text-align: left;
+  height: 100vh;
+  overflow: hidden; /* Pinipigilan ang pag-scroll ng buong page */
+  display: flex;
+  flex-direction: column;
 }
 
 /* ============================
-   Header
+    Header
 ============================ */
 header {
   text-align: center;
-  padding: 30px 20px;
+  padding: 20px;
   background: linear-gradient(135deg, #444, #222);
   border-bottom: 2px solid #555;
   border-radius: 12px;
   margin: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-header h1 {
-  margin-bottom: 15px;
-}
-
-header p {
-  margin-bottom: 10px;
+  flex-shrink: 0; /* Hindi lumiliit ang header */
 }
 
 header h2 {
-  margin-bottom: 12px;
-  font-size: 2em;
+  margin-bottom: 8px;
+  font-size: 1.8em;
   color: #fff;
-}
-
-header p {
-  font-size: 1.1em;
-  color: #ccc;
 }
 
 header a {
@@ -56,180 +47,138 @@ header a {
   font-weight: bold;
 }
 
-header a:hover {
-  color: #0d8ddb;
-  text-shadow: 0 0 5px #1da1f2;
-}
-
 /* ============================
-   Layout
+    Layout Container
 ============================ */
 .container {
   display: flex;
-  min-height: calc(100vh - 150px);
-  margin: 10px;
+  flex: 1;
+  margin: 0 15px 15px 15px;
+  gap: 20px;
+  overflow: hidden; /* Sinisigurong sa loob lang ang scroll */
 }
 
 /* ============================
-   Sidebar
+    Sidebar (Revised Hierarchy & Alignment)
 ============================ */
 .sidebar {
-  width: 280px;
-  padding: 20px;
+  width: 300px;
   background: #3a3a3a;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  overflow-y: auto;
+  height: 100%; 
+  overflow-y: auto; 
+  padding: 0; 
 }
 
 .sidebar h3 {
-  margin-bottom: 15px;
+  padding: 20px;
   font-size: 1.3em;
   color: #fff;
-  border-bottom: 1px solid #555;
-  padding-bottom: 5px;
+  border-bottom: 2px solid #1da1f2;
+  position: sticky; 
+  top: 0;
+  background: #222; 
+  margin: 0;
+  z-index: 10;
 }
 
 .sidebar ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.sidebar li {
-  margin: 10px 0;
-  color: #ddd;
-}
-
-.sidebar li i {
-  margin-right: 6px;
+/* Lab Titles - Pinagtatabi ang icon at text */
+.sidebar > ul > li {
+  padding: 12px 15px;
+  font-weight: bold;
   color: #1da1f2;
+  background: #333;
+  border-bottom: 1px solid #444;
+  
+  display: flex; 
+  flex-direction: row; /* Pinagtabi ang icon at title */
+  align-items: center; /* Pantay sa gitna vertical */
+  flex-wrap: wrap; /* Para bumaba ang sub-menu (Activities) */
 }
 
-.sidebar a {
+/* Icon style para pantay ang spacing */
+.sidebar > ul > li i {
+  margin-right: 12px; 
+  width: 20px; 
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Sub-menu (Activities) - Indented logic */
+.sidebar ul ul {
+  flex-basis: 100%; /* Pinupuwersa ang activities sa ilalim ng title */
+  background: #3a3a3a;
+  padding: 5px 0;
+}
+
+.sidebar ul ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar ul ul li a {
+  display: block;
+  padding: 8px 45px; /* Mas malaking indent para sa activities */
+  color: #bbb;
+  font-weight: normal;
+  font-size: 0.95em;
   text-decoration: none;
-  color: #ddd;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.sidebar a:hover {
+.sidebar ul ul li a:hover {
+  background-color: #444;
   color: #fff;
-  text-shadow: 0 0 5px #1da1f2;
+  padding-left: 50px;
+  border-left: 4px solid #1da1f2;
 }
 
 /* ============================
-   Content Area
+    Content Area (Iframe Area)
 ============================ */
 .content {
   flex: 1;
-  margin-left: 20px;
   background: #3a3a3a;
   border-radius: 12px;
-  padding: 15px;
+  padding: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  height: 100%;
 }
 
 iframe {
   width: 100%;
-  height: calc(100vh - 120px);
+  height: 100%;
   border: none;
   border-radius: 10px;
   background: #2b2b2b;
 }
 
-
 /* ============================
-   Scrollbar
+    Custom Scrollbar
 ============================ */
-::-webkit-scrollbar {
-  width: 10px;
+.sidebar::-webkit-scrollbar {
+  width: 6px;
 }
 
-::-webkit-scrollbar-track {
+.sidebar::-webkit-scrollbar-track {
   background: #2b2b2b;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #1da1f2;
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #888;
-}
-
 /* ============================
-   Subpages (Lab Pages)
+    Mobile Responsive
 ============================ */
-main {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 25px;
-  background: rgba(40, 40, 40, 0.9);
-  border-radius: 15px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-main h1, main h2, main h3 {
-  color: #ffffff;
-  margin-bottom: 15px;
-}
-
-main p, main li {
-  color: #f4f4f4;
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-main ul {
-  margin-left: 20px;
-  padding-left: 15px;
-  border-left: 2px solid rgba(255,255,255,0.15);
-}
-
-main a {
-  color: #66aaff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-main a:hover {
-  color: #88cfff;
-  text-decoration: underline;
-}
-
-/* ============================
-   Animations
-============================ */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================
-   Back to Top Button
-============================ */
-#backToTop {
-  display: none;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #000000;
-  color: white;
-  cursor: pointer;
-  padding: 12px 16px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-#backToTop:hover {
-  background-color: #ffcc80;
-  color: #3e2723;
-}
 #toggleSidebar {
   display: none;
   position: fixed;
@@ -237,17 +186,16 @@ main a:hover {
   left: 20px;
   background-color: #1da1f2;
   color: white;
-  border: none;
-  border-radius: 6px;
   padding: 8px 12px;
   z-index: 1000;
   cursor: pointer;
+  border-radius: 6px;
 }
 
 @media (max-width: 768px) {
   .sidebar {
     position: fixed;
-    left: -300px;
+    left: -320px;
     top: 0;
     height: 100%;
     transition: left 0.3s ease;

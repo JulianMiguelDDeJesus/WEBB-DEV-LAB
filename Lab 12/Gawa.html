@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit List Lab</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Basic styling to match your screenshot */
+    body { font-family: sans-serif; transition: 0.3s; margin: 0; }
+    .header { background-color: #1da1f2; color: white; padding: 40px; text-align: center; position: relative; }
+    .mode-btn { position: absolute; top: 10px; right: 10px; cursor: pointer; background: none; border: none; color: white; font-size: 20px; }
+    .content { padding: 20px; }
+    body.dark { background-color: #1a1a1a; color: white; }
+    #interactiveName { cursor: pointer; }
+  </style>
+<body>
+
+  <main class="content">
+    <h2>Fruit List</h2>
+    <ul id="fruit-list-container"></ul>
+  </main>
+
+  <script>
+    // 3. Create List Items with Loops
+    const fruits = ["Apple", "Banana", "Orange", "Mango", "Grapes"];
+    const listContainer = document.getElementById("fruit-list-container");
+
+    // This loop dynamically creates the <li> elements seen in your image
+    fruits.forEach((fruit) => {
+      const li = document.createElement("li");
+      li.textContent = fruit;
+      listContainer.appendChild(li);
+    });
+  </script>
+</body>
+</html>

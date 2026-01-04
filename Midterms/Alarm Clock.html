@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Alarm Clock</title>
+  <style>
+    :root {
+      --clock-color: #00fff2; /* Initial Cyan color from your image */
+    }
+
+    body {
+      background-color: #000; /* Dark background like your design */
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    /* The glowing box from your screenshot */
+    .clock-container {
+      border: 2px solid var(--clock-color);
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px var(--clock-color), inset 0 0 5px var(--clock-color);
+      margin-bottom: 30px;
+      transition: all 0.5s ease; /* Smooth color transition */
+    }
+
+    #clock {
+      font-size: 48px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: var(--clock-color);
+      text-shadow: 0 0 10px var(--clock-color);
+    }
+
+    #status {
+      margin-top: 15px;
+      color: var(--clock-color);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Digital Clock</h2>
+
+  <div class="clock-container">
+    <div id="clock">00:00:00</div>
+  </div>
+
+  <script src="Alarm.js"></script>
+</body>
+</html>

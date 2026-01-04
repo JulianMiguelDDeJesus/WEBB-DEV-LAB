@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="dom.js"></script>
+    <title>DOM</title>
+</head>
+<body>
+
+    <h1 id="page-title">Welcome!</h1>
+    <button id="change-title-btn">Change Title</button>
+    <script>
+        
+    document.getElementById('interactiveName').addEventListener('click', () => {
+      alert('Hello, I am NinoRanielCapuli!');
+    });
+
+    const iframe = document.querySelector("iframe");
+    iframe.addEventListener("load", () => {
+      iframe.classList.add("loaded");
+    });
+
+    const toggleBtn = document.getElementById("modeToggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggleBtn.innerHTML = document.body.classList.contains("dark")
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
+    });
+  
+    </script>
+
+</body>
+</html>

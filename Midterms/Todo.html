@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Lab</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+
+    .todo-container {
+      background: white;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #1da1f2;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #1da1f2;
+    }
+
+    #addBtn {
+      padding: 10px 15px;
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.2s;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    /* Click to mark as done */
+    .task-text {
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: #888;
+    }
+
+    .delete-btn {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .delete-btn:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="todo-container">
+    <h2>My To-Do List</h2>
+    
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="What needs to be done?">
+      <button id="addBtn">Add</button>
+    </div>
+
+    <ul id="taskList">
+      </ul>
+  </div>
+
+  <script>
+    const taskInput = document.getElementById('taskInput');
+    const addBtn = document.getElementById('addBtn');
+    const taskList = document.getElementById('taskList');
+
+    // Function to add a new task
+    function addTask() {
+      const taskValue = taskInput.value.trim();
+
+      if (taskValue === "") {
+        alert("Please enter a task!");
+        return;
+      }
+
+      // Create the list item (li)
+      const li = document.createElement('li');
+
+      // Create the text span
+      const span = document.createElement('span');
+      span.textContent = taskValue;
+      span.className = "task-text";
+      
+      // Toggle completed class on click
+      span.addEventListener('click', () => {
+        span.classList.toggle('completed');
+      });
+
+      // Create the delete button
+      const delBtn = document.createElement('button');
+      delBtn.textContent = "X";
+      delBtn.className = "delete-btn";
+      delBtn.addEventListener('click', () => {
+        li.remove();
+      });
+
+      // Append elements
+      li.appendChild(span);
+      li.appendChild(delBtn);
+      taskList.appendChild(li);
+
+      // Clear input
+      taskInput.value = "";
+    }
+
+    // Event listeners
+    addBtn.addEventListener('click', addTask);
+
+    // Allow pressing "Enter" to add task
+    taskInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        addTask();
+      }
+    });
+  </script>
+
+</body>
+</html>

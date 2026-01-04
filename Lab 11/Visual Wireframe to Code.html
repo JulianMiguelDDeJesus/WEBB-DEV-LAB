@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Wireframe to Code</title>
+  <style>body{font-family:Arial,Helvetica,sans-serif;padding:1rem}</style>
+</head>
+<body>
+  <h1>Enter your name</h1>
+  <input type="text" id="nameInput" placeholder="Your name here">
+  <button onclick="sayThanks()">Submit</button>
+  <script> 
+  function sayThanks() {
+    const name = document.getElementById('nameInput').value;
+    alert('Thank you, ' + name + '!');
+  }
+  </script>
+</body>
+</html>

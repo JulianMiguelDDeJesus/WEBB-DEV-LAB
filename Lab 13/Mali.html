@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+</head>
+<body>
+
+  <h2>Fixed Form Validation</h2>
+
+  <form id="simpleForm">
+    <label>Name:</label>
+    <input type="text" id="nameInput">
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    document.getElementById("simpleForm").addEventListener("submit", function(event) {
+      // Prevents the page from refreshing on submit
+      event.preventDefault();
+
+      const nameValue = document.getElementById("nameInput").value;
+      const messageDisplay = document.getElementById("message");
+
+      // Simple Validation Logic
+      if (nameValue.trim() === "") {
+        messageDisplay.textContent = "Error: Name cannot be empty.";
+        messageDisplay.style.color = "red";
+      } else {
+        messageDisplay.textContent = "Success! Hello, " + nameValue + "!";
+        messageDisplay.style.color = "green";
+      }
+    });
+  </script>
+
+</body>
+</html>

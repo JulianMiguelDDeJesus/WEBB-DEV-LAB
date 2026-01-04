@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .reserve-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1da1f2; /* Blue accent */
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    input:focus {
+      border-color: #1da1f2;
+      outline: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #0d8bd9;
+    }
+
+    #confirmation {
+      margin-top: 20px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reserve-container">
+    <h2>Book a Reservation</h2>
+    <form id="reservationForm">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="John Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label for="guests">Number of Guests</label>
+        <select id="guests" required>
+          <option value="1">1 Person</option>
+          <option value="2">2 People</option>
+          <option value="3">3 People</option>
+          <option value="4">4+ People</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="resDate">Date</label>
+        <input type="date" id="resDate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="resTime">Time</label>
+        <input type="time" id="resTime" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Confirm Booking</button>
+    </form>
+
+    <div id="confirmation"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('reservationForm');
+    const confirmation = document.getElementById('confirmation');
+    const dateInput = document.getElementById('resDate');
+
+    // Prevent selecting past dates
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('fullName').value;
+      const date = document.getElementById('resDate').value;
+      const time = document.getElementById('resTime').value;
+
+      // Display confirmation
+      confirmation.style.display = "block";
+      confirmation.style.backgroundColor = "#d4edda";
+      confirmation.style.color = "#155724";
+      confirmation.innerHTML = `<strong>Success!</strong><br>Reservation confirmed for ${name} on ${date} at ${time}.`;
+
+      // Reset form
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

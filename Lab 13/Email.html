@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Format Validator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .validator-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #1da1f2; /* Matching your lab's blue theme */
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+
+    input:focus {
+      border-color: #1da1f2;
+      outline: none;
+    }
+
+    button {
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0d8bd9;
+    }
+
+    #resultMessage {
+      margin-top: 20px;
+      font-weight: 600;
+      min-height: 24px;
+    }
+
+    .valid { color: #28a745; }
+    .invalid { color: #dc3545; }
+  </style>
+</head>
+<body>
+
+  <div class="validator-card">
+    <h2>Email Validator</h2>
+    <form id="emailForm">
+      <input type="text" id="emailInput" placeholder="Enter email to check..." required>
+      <button type="submit">Validate Email</button>
+    </form>
+    <div id="resultMessage"></div>
+  </div>
+
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('emailInput').value.trim();
+      const message = document.getElementById('resultMessage');
+      
+      // Regular Expression for basic email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (emailPattern.test(email)) {
+        message.textContent = "✓ Success: Valid email format.";
+        message.className = "valid";
+      } else {
+        message.textContent = "✗ Error: Invalid email format.";
+        message.className = "invalid";
+      }
+    });
+  </script>
+
+</body>
+</html>
